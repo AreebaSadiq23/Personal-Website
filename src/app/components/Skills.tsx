@@ -3,7 +3,7 @@ import styles from '../styles/Skills.module.css';
 
 interface Skill {
     name: string;
-    description: string; 
+    description: string;
 }
 
 const skillsData: Skill[] = [
@@ -24,10 +24,10 @@ const Skills: React.FC = () => {
                     <div key={skill.name} className={styles.card}>
                         <div className={styles.cardInner}>
                             <div className={styles.cardFront}>
-                                <h3>{skill.name}</h3>
+                                <h3>{skill.name}</h3> 
                             </div>
                             <div className={styles.cardBack}>
-                                <p>{skill.description}</p>
+                                <p>{skill.description}</p> 
                             </div>
                         </div>
                     </div>
