@@ -1,132 +1,145 @@
 .skillsSection {
   padding: 40px;
-  background-color: rgba(20, 20, 20, 0.9); 
-  backdrop-filter: blur(15px); 
-  color: #e0e0e0; 
+  background-color: #000;
+  color: #e0e0e0;
 }
 
 .skillsSection h2 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 4rem;
-  color: tan;
+  color: #d2b48c; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .skillsContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; 
-  justify-content: center; 
+  gap: 20px;
+  justify-content: center;
 }
 
 .card {
-  perspective: 1000px; 
-  width: 250px; 
-  height: 300px; 
+  perspective: 1000px;
+  width: 250px;
+  height: 320px;
+  transition: transform 0.4s ease-in-out;
+  border-radius: 12px;
 }
 
 .cardInner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s; 
-  transform-style: preserve-3d; 
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  border-radius: 12px;
+  overflow: hidden;
 }
+
 .cardFront, .cardBack {
   position: absolute;
   width: 100%;
   height: 100%;
-  border-radius: 10px; 
+  border-radius: 12px;
   display: flex;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background: rgba(50, 50, 50, 0.9); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
-  padding: 20px; 
+  background: rgba(27, 27, 27, 0.7); 
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(10px); 
 }
 
 .cardFront {
-  z-index: 2; 
-  color: #f0e98ce8; 
-  font-weight: bold; 
-  font-size: 1.7rem;
+  z-index: 2;
+  color: #f5e8d8; 
+  font-weight: 600;
+  font-size: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.2); 
 }
 
 .cardBack {
-  transform: rotateY(180deg); 
-  z-index: 1; 
-  color: #ffffff; 
-  display: flex; 
-  justify-content: center; 
-  align-items: center; 
-  opacity: 0; 
+  transform: rotateY(180deg);
+  z-index: 1;
+  color: #ffffff;
+  opacity: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2); 
 }
+
 .card:hover .cardInner {
   transform: rotateY(180deg);
 }
 
 .card:hover .cardFront {
-  z-index: 1; 
+  z-index: 1;
 }
 
 .card:hover .cardBack {
   opacity: 1;
+  background: rgba(41, 41, 41, 0.8); 
 }
+
 .cardBack p {
-  font-size: 1rem; 
-  margin: 0; 
-  line-height: 1.4;
-  text-align: center;
-  padding: 10px; 
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+.card:hover {
+  transform: scale(1.05); 
+  transition: transform 0.4s ease-in-out;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
 }
 
 /* Responsive styles */
 @media (max-width: 1200px) {
   .skillsSection h2 {
-    font-size: 3.5rem; 
+    font-size: 3.5rem;
   }
   .card {
-    width: 200px; 
-    height: 250px;
+    width: 220px;
+    height: 280px;
   }
 }
 
 @media (max-width: 992px) {
   .skillsSection h2 {
-    font-size: 3rem; 
+    font-size: 3rem;
   }
   .card {
-    width: 180px; 
-    height: 230px; 
+    width: 200px;
+    height: 250px;
   }
 }
 
 @media (max-width: 768px) {
   .skillsSection h2 {
-    font-size: 2.5rem; 
+    font-size: 2.5rem;
   }
   .card {
-    width: 150px; 
-    height: 200px; 
+    width: 160px;
+    height: 220px;
   }
   .cardFront {
-    
-    font-weight: bold; 
     font-size: 1rem;
   }
 }
 
 @media (max-width: 576px) {
   .skillsSection h2 {
-    font-size: 2rem; 
+    font-size: 2rem;
   }
   .skillsContainer {
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
   }
   .card {
-    width: 90%; 
+    width: 90%;
     height: auto;
   }
 }
